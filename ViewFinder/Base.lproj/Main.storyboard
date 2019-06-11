@@ -34,27 +34,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ViewFinder" id="uBn-bj-BPm">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Jug-L3-HQO">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Phj-XY-1Sh">
-                                <rect key="frame" x="302" y="0.0" width="92" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="+"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="+" width="1" id="VZv-Ux-8Ks">
                             <connections>
-                                <segue destination="v6m-Pf-9Zf" kind="show" id="929-oE-jOy"/>
+                                <segue destination="v6m-Pf-9Zf" kind="show" id="wjZ-4L-2AY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZF3-bm-wXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.8840579710145" y="135.9375"/>
+            <point key="canvasLocation" x="965" y="136"/>
         </scene>
         <!--Add New Photo-->
         <scene sceneID="Qdk-7A-Sn0">
             <objects>
-                <viewController id="v6m-Pf-9Zf" sceneMemberID="viewController">
+                <viewController id="v6m-Pf-9Zf" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ot5-l1-pKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,27 +68,42 @@
                                 <rect key="frame" x="66" y="645" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="v6m-Pf-9Zf" eventType="touchUpInside" id="kw4-hp-qWP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z8-oE-L8Z">
                                 <rect key="frame" x="265" y="645" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="v6m-Pf-9Zf" eventType="touchUpInside" id="ylE-GE-SOA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZc-e0-GPn">
                                 <rect key="frame" x="289" y="779" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Album"/>
+                                <connections>
+                                    <action selector="viewAlbum:" destination="v6m-Pf-9Zf" eventType="touchUpInside" id="tE4-K6-dy1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OU9-Dc-xgt">
                                 <rect key="frame" x="66" y="773" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="v6m-Pf-9Zf" eventType="touchUpInside" id="uWx-7I-4Ik"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vMb-nt-U5K"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="SJT-2a-0WH"/>
+                    <connections>
+                        <outlet property="photoSpace" destination="kAi-vH-NAa" id="rIq-CY-c4Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6D-2P-4ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
